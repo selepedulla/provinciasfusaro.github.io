@@ -1,0 +1,273 @@
+:root {
+    --color-principal: #5c94aa;   
+    --color-secundario: #fcea4f;  
+    --color-fondo: #f2f2f2;        
+    --color-texto: #333333;       
+    --color-blanco: #ffffff;      
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+header {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-blanco);
+    border-bottom: 5px solid var(--color-secundario);
+}
+
+.slider-fondos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider-fondos div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: crossfade 12s infinite;
+}
+
+.slider-fondos div:nth-child(1) {
+    background-image: url(img/_\ Tierra\ del\ Fuego\,\ Argentina.jpg);
+    animation-delay: 0s;
+}
+.slider-fondos div:nth-child(2) {
+    background-image: url(img/USHUAIA\ TIERRA\ DEL\ FUEGO.jpg);
+    animation-delay: 4s;
+}
+.slider-fondos div:nth-child(3) {
+    background-image: url(img/Parque\ Nacional\ Tierra\ del\ Fuego\,\ Argentina.jpg);
+    animation-delay: 8s;
+}
+
+@keyframes crossfade {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    35% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.header-contenido {
+    position: relative;
+    z-index: 3;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    letter-spacing: 1px;
+}
+
+header h2 {
+    color: var(--color-secundario);
+    font-size: 26px;
+    margin: 10px 0 0 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    border: none;
+    padding: 0;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+nav {
+    background-color: var(--color-blanco);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    border-bottom: 3px solid var(--color-principal);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: var(--color-blanco);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.06);
+}
+
+section {
+    margin-bottom: 65px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h2 {
+    color: var(--color-principal);
+    border-left: 6px solid var(--color-secundario);
+    padding-left: 15px;
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.portada {
+    text-align: center;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.portada h2 {
+    border-left: none;
+    padding-left: 0;
+    color: var(--color-texto);
+    font-size: 28px;
+}
+
+.portada p {
+    font-size: 17px;
+    max-width: 850px;
+    margin: 0 auto;
+    color: #555555;
+}
+
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* MODIFICACIÓN PRINCIPAL */
+.tarjeta-img-box {
+    width: 100%;
+    height: auto; /* Se elimina el alto fijo de 200px para adaptarse a la foto */
+    overflow: hidden;
+    position: relative;
+}
+
+.tarjeta-img-box img {
+    width: 100%;
+    height: auto; /* La imagen mantiene su proporción de aspecto real */
+    display: block; /* Elimina espacios vacíos inferiores en elementos en línea */
+    object-fit: contain; /* Garantiza que se muestre completa sin recortes */
+    transition: transform 0.5s ease;
+}
+
+.tarjeta:hover .tarjeta-img-box img {
+    transform: scale(1.04); /* Efecto zoom sutil ajustado */
+}
+
+.tarjeta-contenido {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-contenido h3 {
+    margin-top: 0;
+    color: var(--color-principal);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+    margin: 0;
+    font-size: 15px;
+    color: #444444;
+}
+
+footer {
+    background-color: var(--color-texto);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    border-top: 5px solid var(--color-secundario);
+    font-size: 15px;
+}
+
+.tarjeta-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+.tarjeta-link .tarjeta {
+    width: 100%;
+}
